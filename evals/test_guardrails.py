@@ -17,6 +17,11 @@ def test_input_guardrail_blocks_offensive_and_offtopic() -> None:
     )
     assert res_ok["permitido"] is True
 
+    res_qr_bo = validar_entrada(
+        "Recibimos un enlace QR sospechoso https://asfi-renta.com/login en nuestra tienda de El Alto con presupuesto de Bs 200"
+    )
+    assert res_qr_bo["permitido"] is True
+
 
 def test_output_guardrail_blocks_hallucinated_cve_and_enforces_lapaz_transparency() -> None:
     registro = {
@@ -28,6 +33,7 @@ def test_output_guardrail_blocks_hallucinated_cve_and_enforces_lapaz_transparenc
         "ag": {
             "riesgo_reducido_pct": 75.5,
             "costo_total_usd": 20.0,
+            "costo_total_bob": 139.2,
             "horas_totales": 2.0,
         },
     }
@@ -47,7 +53,7 @@ def test_output_guardrail_blocks_hallucinated_cve_and_enforces_lapaz_transparenc
 
     good_resp = validar_salida(
         "No existen estadísticas reales de incidentes por zona en data/. "
-        "Para CVE-2023-1234, el riesgo reducido es 75.5% con costo total $20.0 USD y horas totales 2.0.",
+        "Para CVE-2023-1234, el riesgo reducido es 75.5% con costo total $20.0 USD (Bs 139.2) y horas totales 2.0.",
         registro,
         pide_estadisticas_lapaz=True,
     )

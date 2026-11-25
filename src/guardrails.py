@@ -41,6 +41,8 @@ CYBER_KEYWORDS = [
     "riesgo",
     "mitigaci",
     "router",
+    "mikrotik",
+    "tp-link",
     "wifi",
     "wi-fi",
     "wordpress",
@@ -56,8 +58,12 @@ CYBER_KEYWORDS = [
     "mype",
     "unidad educativa",
     "centro comunitario",
+    "telecentro",
     "la paz",
+    "el alto",
+    "viacha",
     "presupuesto",
+    "bolivianos",
     "proteger",
     "hardening",
     "respaldo",
@@ -66,13 +72,30 @@ CYBER_KEYWORDS = [
     "estadistica",
     "perfil",
     "lpz-",
+    "phishing",
+    "quishing",
+    "qr",
+    "estafa",
+    "suplantaci",
+    "url",
+    "enlace",
+    "link",
+    "http://",
+    "https://",
+    "ransomware",
+    "malware",
+    "agetic",
+    "cgii",
+    "csirt",
+    "asfi",
+    "att",
 ]
 
 LA_PAZ_STATS_PATTERNS = [
     r"estad[ií]sticas?\s+(?:reales?\s+)?(?:de\s+)?incidentes",
     r"cu[aá]ntos\s+(?:ataques|incidentes|ciberataques)\s+(?:hubo|ocurrieron|existen)",
     r"por\s+(?:zona|barrio|macrodistrito)\s+(?:de|en)\s+la\s+paz",
-    r"tasa\s+de\s+(?:ataques|incidentes)\s+en\s+(?:sopocachi|miraflores|centro|alto\s+lima|el\s+alto|la\s+paz)",
+    r"tasa\s+de\s+(?:ataques|incidentes)\s+en\s+(?:sopocachi|miraflores|centro|alto\s+lima|el\s+alto|la\s+paz|sur|obrajes|viacha)",
 ]
 
 TRANSPARENCY_PHRASES = [
@@ -197,7 +220,7 @@ def validar_salida(
     allowed_nums = _extract_authorized_numbers(registro_tools)
     metric_patterns = [
         (r"riesgo\s+reducido[^0-9]{0,20}(\d+(?:\.\d+)?)\s*%", "riesgo_reducido_pct"),
-        (r"costo\s+total[^0-9]{0,20}\$?\s*(\d+(?:\.\d+)?)", "costo_total_usd"),
+        (r"costo\s+total[^0-9]{0,20}(?:\$|bs\.?)?\s*(\d+(?:\.\d+)?)", "costo_total"),
         (r"horas\s+totales[^0-9]{0,20}(\d+(?:\.\d+)?)", "horas_totales"),
     ]
     for pat, label in metric_patterns:

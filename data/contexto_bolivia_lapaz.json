@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "version": "1.1.0",
+    "region": "Ciudad y Departamento de La Paz, Bolivia",
+    "tipo_cambio_referencial_bob": 11.83,
+    "fecha_tipo_cambio": "2026-11-25",
+    "fuente_tipo_cambio": "Banco Central de Bolivia (BCB) — Tipo de Cambio Oficial (TCO) diario (https://www.bcb.gob.bo)",
+    "nota_tipo_cambio": "Tipo de cambio flexible/referencial diario del BCB (sobrescribible vía variable de entorno TIPO_CAMBIO_BOB o parámetro en la interfaz/API)."
+  },
+  "canales_oficiales_reporte": {
+    "cgii_agetic": {
+      "entidad": "CGII / AGETIC — CSIRT Nacional de Bolivia",
+      "ambito": [
+        "vulnerabilidades",
+        "trafico_red",
+        "phishing_qr",
+        "general"
+      ],
+      "descripcion": "Centro de Gestión de Incidentes Informáticos (DS 2514 y DS 5519). Emite alertas de vulnerabilidades (CVEs) y recibe reportes 24/7.",
+      "url_portal": "https://csirt.gob.bo",
+      "url_estadisticas": "https://cgii.gob.bo",
+      "contacto": "cgii@agetic.gob.bo | Tel: (+591 2) 2184026"
+    },
+    "att_bloquea_estafa": {
+      "entidad": "ATT Bolivia — Plataforma Bloquea la Estafa",
+      "ambito": [
+        "phishing_qr",
+        "estafa_telecom",
+        "general"
+      ],
+      "descripcion": "Reporte ciudadano de líneas telefónicas, mensajes de WhatsApp/SMS y equipos (IMEI) usados en estafas digitales o suplantación de operadores.",
+      "url_portal": "https://bloquealaestafa.att.gob.bo",
+      "url_estadisticas": "https://www.att.gob.bo",
+      "contacto": "Portal web 24/7 bloquealaestafa.att.gob.bo"
+    },
+    "asfi_defensoria": {
+      "entidad": "ASFI — Defensoría del Consumidor Financiero",
+      "ambito": [
+        "phishing_qr"
+      ],
+      "descripcion": "Atención y orientación ante fraudes digitales bancarios, quishing (códigos QR falsos) y operaciones no reconocidas.",
+      "url_portal": "https://www.asfi.gob.bo",
+      "url_estadisticas": "https://www.asfi.gob.bo",
+      "contacto": "Línea gratuita 800 103 103"
+    }
+  },
+  "deteccion_suplantacion_bolivia": {
+    "entidades_gobierno_requieren_gob_bo": [
+      "agetic",
+      "csirt",
+      "cgii",
+      "asfi",
+      "att",
+      "impuestos",
+      "sin-bolivia",
+      "gamlp",
+      "segip",
+      "seprec",
+      "aduana",
+      "minedu",
+      "bolivia-gob"
+    ],
+    "entidades_finanzas_telecom": [
+      "bancounion",
+      "banco-union",
+      "bnb",
+      "bancosol",
+      "bancofie",
+      "bmsc",
+      "mercantilsantacruz",
+      "bcp",
+      "ganadero",
+      "economico",
+      "entel",
+      "tigo",
+      "viva",
+      "cotel",
+      "simple-qr",
+      "pago-qr"
+    ],
+    "dominios_oficiales_permitidos": [
+      "bancounion.com.bo",
+      "bnb.com.bo",
+      "bancosol.com.bo",
+      "bancofie.com.bo",
+      "bmsc.com.bo",
+      "bcp.com.bo",
+      "bg.com.bo",
+      "baneco.com.bo",
+      "entel.bo",
+      "tigo.com.bo",
+      "viva.com.bo",
+      "cotel.bo",
+      "lapaz.bo"
+    ],
+    "palabras_senuelo_fraude": [
+      "login",
+      "verificar",
+      "verificacion",
+      "bloqueo",
+      "desbloqueo",
+      "premio",
+      "bono",
+      "renta",
+      "qr",
+      "pago",
+      "soporte",
+      "asistencia",
+      "actualizar",
+      "clave",
+      "pin",
+      "token",
+      "regalo",
+      "inversion"
+    ]
+  },
+  "fuentes_datos_oficiales": [
+    {
+      "fuente": "INE — Censo de Población y Vivienda 2024 (CPV 2024)",
+      "url": "https://cpv2024.ine.gob.bo",
+      "formato": "CSV (ZIP) y Excel por municipio (acceso directo sin registro)",
+      "uso": "Variables TIC (internet fijo/móvil, computadora, celular) por municipio de La Paz"
+    },
+    {
+      "fuente": "INE — Catálogo ANDA (EMyPE 2018 ID 224, MYPES 2010, EH 2025)",
+      "url": "https://anda.ine.gob.bo",
+      "formato": "Microdatos CSV/SPSS/Stata y diccionarios CSV/JSON (requiere cuenta gratuita)",
+      "uso": "Microdatos de MYPES y acceso TIC filtrables por COD_DEPTO (La Paz)"
+    },
+    {
+      "fuente": "Banco Central de Bolivia (BCB) — Tipo de Cambio Oficial (TCO)",
+      "url": "https://www.bcb.gob.bo",
+      "formato": "CSV, Excel (.xlsx) y JSON (serie diaria)",
+      "uso": "Cotización diaria referencial/oficial Bs por USD"
+    },
+    {
+      "fuente": "CGII / AGETIC CSIRT Nacional",
+      "url": "https://csirt.gob.bo",
+      "formato": "PDF trimestrales (IGIV) y scraping a CSV vía src/extraer_alertas_agetic.py",
+      "uso": "Alertas de CVEs activas en Bolivia e informes trimestrales de incidentes"
+    },
+    {
+      "fuente": "MDPyEP — Data Bolivia y SIIP",
+      "url": "https://data-bolivia.produccion.gob.bo",
+      "formato": "Tablas interactivas con botón Exportar a Excel (y PDFs en siip.produccion.gob.bo)",
+      "uso": "Conteo actualizado de empresas activas y MYPES en el departamento de La Paz"
+    }
+  ]
+}

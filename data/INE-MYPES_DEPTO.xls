@@ -1,0 +1,112 @@
+<htmL>
+<head>
+<title>DATOS EXCEL</title>
+<style>
+body{font-family:"Arial Narrow"; font-size:13px; size:13px;}
+body strong{font-size:13px;}
+body P{font-size:13px;}
+body table tr {font-size:13px;}
+body table tr td{font-size:13px;}
+</style>
+</head>
+<body>
+<table width="95%" border="0" align="center">
+   <tr>
+    <td colspan="6" align="center"><strong>MICRO Y PEQUE—AS EMPRESAS<BR>LA PAZ</strong></td>
+  </tr>
+  <tr>
+    <td width="32%" align="center" style='border: 1px solid #ffffff;' bgcolor='#376091'><strong style='color:#FFF'>ACTIVIDAD ECONOMICA</strong></td>
+    <td width="19%" align="center" style='border: 1px solid #ffffff;' bgcolor='#376091'><strong style='color:#FFF'>VALOR BRUTO DE PRODUCCION</strong></td>
+    <td width="14%" align="center" style='border: 1px solid #ffffff;' bgcolor='#376091'><strong style='color:#FFF'>CONSUMO INTERMEDIO</strong></td>
+    <td width="13%" align="center" style='border: 1px solid #ffffff;' bgcolor='#376091'><strong style='color:#FFF'>VALOR AGREGADO</strong></td>
+    <td width="11%" align="center" style='border: 1px solid #ffffff;' bgcolor='#376091'><strong style='color:#FFF'>PERSONAL OCUPADO</strong></td>
+    <td width="11%" align="center" style='border: 1px solid #ffffff;' bgcolor='#376091'><strong style='color:#FFF'>NUMERO DE EMPRESAS</strong></td>
+  </tr>
+  
+	 <tr>
+		<td>Madera y Productos de Madera</td>
+		<td align='right'>4.400.678</td>
+		<td align='right'>2.148.592</td>
+		<td align='right'>2.252.086</td>
+		<td align='right'>274</td>
+		<td align='right'>137</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Otras Industrias Manufactureras</td>
+		<td align='right'>168.265.590</td>
+		<td align='right'>77.486.431</td>
+		<td align='right'>90.779.159</td>
+		<td align='right'>5.078</td>
+		<td align='right'>2.097</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Papel y Productos de Papel</td>
+		<td align='right'>89.004.004</td>
+		<td align='right'>42.612.648</td>
+		<td align='right'>46.391.355</td>
+		<td align='right'>2.295</td>
+		<td align='right'>646</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Productos Alimenticios y Bebidas</td>
+		<td align='right'>354.018.788</td>
+		<td align='right'>233.208.849</td>
+		<td align='right'>120.809.939</td>
+		<td align='right'>4.600</td>
+		<td align='right'>1.526</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Productos de Minerales no Met√°licos</td>
+		<td align='right'>29.053.937</td>
+		<td align='right'>5.906.013</td>
+		<td align='right'>23.147.924</td>
+		<td align='right'>779</td>
+		<td align='right'>303</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Productos Met√°licos , Maquinaria y Equipo</td>
+		<td align='right'>141.089.056</td>
+		<td align='right'>63.109.406</td>
+		<td align='right'>77.979.650</td>
+		<td align='right'>3.274</td>
+		<td align='right'>1.433</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Substancias y Productos Quimicos</td>
+		<td align='right'>10.509.496</td>
+		<td align='right'>6.253.311</td>
+		<td align='right'>4.256.185</td>
+		<td align='right'>642</td>
+		<td align='right'>297</td>
+	  </tr>
+	 
+	 
+	 <tr>
+		<td>Textiles, Prendas de vestir y Productos de Cuero</td>
+		<td align='right'>332.304.384</td>
+		<td align='right'>156.360.298</td>
+		<td align='right'>175.944.085</td>
+		<td align='right'>11.814</td>
+		<td align='right'>5.304</td>
+	  </tr>
+	 
+	 
+  <tr>
+    <td colspan="6">Fuente: INE-MYPES, ElaboraciÛn DGAPI</td>
+  </tr>
+</table>
+
+</body>
+</html>

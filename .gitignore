@@ -14,10 +14,15 @@ models/*.joblib
 
 # Datasets pesados y archivos comprimidos (ver README.md para descargar/regenerar)
 data/*.zip
+data/*.crdownload
 data/PhiUSIIL_Phishing_URL_Dataset.csv
 data/UNSW_NB15_*.csv
 data/urlhaus_recent.csv
 datasets/UNSW_NB15_*.csv
+
+# Documentos personales de tesis y utilidades locales del entorno
+Propuesta de Tesis - Sistema Multi-Agente Ciberseguridad La Paz.md
+skills/
 
 # Sistema operativo y editores
 .DS_Store

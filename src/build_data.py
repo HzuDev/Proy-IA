@@ -1,5 +1,5 @@
 """Fase 2: Construcción de caché real de CVEs (NIST NVD v2.0 + FIRST EPSS)
-y generación de 12 perfiles operativos de La Paz.
+y generación de 14 perfiles operativos de la ciudad y departamento de La Paz.
 """
 
 from __future__ import annotations
@@ -16,6 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 CVE_CACHE_PATH = DATA_DIR / "cve_cache.json"
 PERFILES_PATH = DATA_DIR / "perfiles_lapaz.json"
+TIPO_CAMBIO_BOB = float(os.getenv("TIPO_CAMBIO_BOB", "11.83"))
 
 NVD_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 EPSS_URL = "https://api.first.org/data/v1/epss"
@@ -228,13 +229,16 @@ def build_cve_cache() -> list[dict[str, Any]]:
 
 
 def build_perfiles_lapaz() -> list[dict[str, Any]]:
-    """Genera 12 perfiles técnicos representativos de La Paz (sin sector financiero)."""
+    """Genera 14 perfiles técnicos representativos de la ciudad y departamento de La Paz."""
     perfiles = [
         {
             "id": "LPZ-CC-01",
             "nombre": "Centro Comunitario Alto Lima",
             "tipo": "Centro Comunitario",
+            "municipio": "La Paz",
             "macrodistrito": "Max Paredes",
+            "isp_tipico": "Entel",
+            "usa_pagos_qr": False,
             "activos_digitales": [
                 "Router Wi-Fi TP-Link para telecentro vecinal",
                 "PCs compartidas con carpetas SMB en red local",
@@ -248,7 +252,10 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "id": "LPZ-CC-02",
             "nombre": "Casa Cultural Comunitaria Villa Fátima",
             "tipo": "Centro Comunitario",
+            "municipio": "La Paz",
             "macrodistrito": "Periférica",
+            "isp_tipico": "Cotel",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Portal informativo en WordPress",
                 "Router Wi-Fi abierto para talleres",
@@ -257,13 +264,16 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "tecnologias": ["wordpress", "router_wifi", "servidor_web"],
             "presupuesto_disponible_usd": 35.0,
             "horas_tecnicas_disponibles": 5.0,
-            "contexto_operativo": "Espacio cultural barrial administrado por voluntarios sin personal de TI fijo.",
+            "contexto_operativo": "Espacio cultural barrial administrado por voluntarios; recibe aportes e inscripciones por QR.",
         },
         {
             "id": "LPZ-CC-03",
             "nombre": "Centro de Capacitación Digital Cotahuma",
             "tipo": "Centro Comunitario",
+            "municipio": "La Paz",
             "macrodistrito": "Cotahuma",
+            "isp_tipico": "Entel",
+            "usa_pagos_qr": False,
             "activos_digitales": [
                 "Laboratorio con acceso remoto RDP para soporte",
                 "Carpetas compartidas SMB",
@@ -275,10 +285,31 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "contexto_operativo": "Centro de alfabetización digital para adultos mayores y escolares.",
         },
         {
+            "id": "LPZ-CC-04",
+            "nombre": "Telecentro Comunitario Municipal Viacha",
+            "tipo": "Centro Comunitario",
+            "municipio": "Viacha",
+            "macrodistrito": "Provincia Ingavi",
+            "isp_tipico": "Entel",
+            "usa_pagos_qr": False,
+            "activos_digitales": [
+                "Router MikroTik de acceso comunitario",
+                "PCs compartidas con carpetas SMB",
+                "Portal vecinal en WordPress",
+            ],
+            "tecnologias": ["router_wifi", "smb", "wordpress"],
+            "presupuesto_disponible_usd": 25.0,
+            "horas_tecnicas_disponibles": 4.5,
+            "contexto_operativo": "Telecentro provincial del departamento de La Paz con conectividad limitada y soporte eventual.",
+        },
+        {
             "id": "LPZ-UE-01",
             "nombre": "Unidad Educativa 6 de Junio - Turno Mañana",
             "tipo": "Unidad Educativa",
+            "municipio": "La Paz",
             "macrodistrito": "San Antonio",
+            "isp_tipico": "Entel",
+            "usa_pagos_qr": False,
             "activos_digitales": [
                 "Plataforma escolar en WordPress",
                 "Servidor web Apache en aula de computación",
@@ -293,7 +324,10 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "id": "LPZ-UE-02",
             "nombre": "Unidad Educativa Técnico Humanístico Sopocachi",
             "tipo": "Unidad Educativa",
+            "municipio": "La Paz",
             "macrodistrito": "Cotahuma",
+            "isp_tipico": "Tigo",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Servidor de archivos SMB para material didáctico",
                 "Acceso RDP para administración de aula",
@@ -308,7 +342,10 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "id": "LPZ-UE-03",
             "nombre": "Unidad Educativa Valle de Mallasa",
             "tipo": "Unidad Educativa",
+            "municipio": "La Paz",
             "macrodistrito": "Mallasa",
+            "isp_tipico": "Entel",
+            "usa_pagos_qr": False,
             "activos_digitales": [
                 "Router Wi-Fi de cobertura escolar",
                 "Sitio web institucional en WordPress",
@@ -322,7 +359,10 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "id": "LPZ-UE-04",
             "nombre": "Instituto Tecnológico Comunal El Tejar",
             "tipo": "Unidad Educativa",
+            "municipio": "La Paz",
             "macrodistrito": "Max Paredes",
+            "isp_tipico": "AXS",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Servidor web Apache para prácticas",
                 "Acceso RDP a máquinas virtuales",
@@ -338,7 +378,10 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "id": "LPZ-MY-01",
             "nombre": "Textiles Artesanales Illimani SRL (MYPE)",
             "tipo": "MYPE",
+            "municipio": "La Paz",
             "macrodistrito": "Centro",
+            "isp_tipico": "Tigo",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Tienda catálogo en WordPress",
                 "Router Wi-Fi de oficina y taller",
@@ -346,13 +389,16 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "tecnologias": ["wordpress", "router_wifi"],
             "presupuesto_disponible_usd": 40.0,
             "horas_tecnicas_disponibles": 4.0,
-            "contexto_operativo": "Microempresa textil exportadora que gestiona pedidos por web y correo.",
+            "contexto_operativo": "Microempresa textil exportadora que gestiona pedidos por web, WhatsApp y pagos QR.",
         },
         {
             "id": "LPZ-MY-02",
             "nombre": "Imprenta y Diseño Gráfico Prado (MYPE)",
             "tipo": "MYPE",
+            "municipio": "La Paz",
             "macrodistrito": "Centro",
+            "isp_tipico": "AXS",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Servidor de archivos SMB con diseños de clientes",
                 "Acceso RDP desde domicilio del diseñador",
@@ -361,13 +407,16 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "tecnologias": ["smb", "rdp", "router_wifi"],
             "presupuesto_disponible_usd": 65.0,
             "horas_tecnicas_disponibles": 5.5,
-            "contexto_operativo": "MYPE gráfica con riesgo alto de pérdida de archivos por ransomware.",
+            "contexto_operativo": "MYPE gráfica con cobros por QR y riesgo alto de pérdida de archivos por ransomware.",
         },
         {
             "id": "LPZ-MY-03",
             "nombre": "Café y Tostaduría Altura Sur (MYPE)",
             "tipo": "MYPE",
+            "municipio": "La Paz",
             "macrodistrito": "Sur",
+            "isp_tipico": "Tigo",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Router Wi-Fi para clientes y punto de venta",
                 "Sitio WordPress con reservas",
@@ -376,13 +425,16 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "tecnologias": ["router_wifi", "wordpress", "servidor_web"],
             "presupuesto_disponible_usd": 55.0,
             "horas_tecnicas_disponibles": 5.0,
-            "contexto_operativo": "Negocio gastronómico con Wi-Fi compartido entre invitados y caja.",
+            "contexto_operativo": "Negocio gastronómico con Wi-Fi compartido entre invitados, caja y cobros diarios por QR.",
         },
         {
             "id": "LPZ-MY-04",
             "nombre": "Ferretería y Materiales Obrajes (MYPE)",
             "tipo": "MYPE",
+            "municipio": "La Paz",
             "macrodistrito": "Sur",
+            "isp_tipico": "Cotel",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "PC inventario con carpetas SMB",
                 "Acceso RDP de contador externo",
@@ -390,13 +442,16 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "tecnologias": ["smb", "rdp"],
             "presupuesto_disponible_usd": 30.0,
             "horas_tecnicas_disponibles": 3.5,
-            "contexto_operativo": "Pequeña ferretería con facturación e inventario en una PC de escritorio.",
+            "contexto_operativo": "Pequeña ferretería con facturación, cobro por QR e inventario en una PC de escritorio.",
         },
         {
             "id": "LPZ-MY-05",
             "nombre": "Consultora Agrícola y Turística Hampaturi (MYPE)",
             "tipo": "MYPE",
+            "municipio": "La Paz",
             "macrodistrito": "Hampaturi",
+            "isp_tipico": "Entel LTE",
+            "usa_pagos_qr": True,
             "activos_digitales": [
                 "Portal WordPress de turismo comunitario",
                 "Servidor web Apache",
@@ -405,9 +460,32 @@ def build_perfiles_lapaz() -> list[dict[str, Any]]:
             "tecnologias": ["wordpress", "servidor_web", "router_wifi"],
             "presupuesto_disponible_usd": 80.0,
             "horas_tecnicas_disponibles": 7.0,
-            "contexto_operativo": "MYPE rural-urbana con conectividad intermitente y reservas en línea.",
+            "contexto_operativo": "MYPE rural-urbana con conectividad intermitente, reservas en línea y cobros por QR.",
+        },
+        {
+            "id": "LPZ-MY-06",
+            "nombre": "Taller Textil y Comercializadora 16 de Julio (MYPE)",
+            "tipo": "MYPE",
+            "municipio": "El Alto",
+            "macrodistrito": "Distrito 6",
+            "isp_tipico": "Entel",
+            "usa_pagos_qr": True,
+            "activos_digitales": [
+                "Router Wi-Fi TP-Link de taller y ventas",
+                "PC de pedidos con carpetas compartidas SMB",
+                "Catálogo web en WordPress",
+            ],
+            "tecnologias": ["router_wifi", "smb", "wordpress"],
+            "presupuesto_disponible_usd": 30.0,
+            "horas_tecnicas_disponibles": 4.0,
+            "contexto_operativo": "MYPE manufacturera y comercial en El Alto que opera ventas por redes sociales y pagos QR.",
         },
     ]
+
+    for p in perfiles:
+        p["presupuesto_disponible_bob"] = round(
+            float(p["presupuesto_disponible_usd"]) * TIPO_CAMBIO_BOB, 2
+        )
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     with PERFILES_PATH.open("w", encoding="utf-8") as f:

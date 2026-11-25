@@ -3,7 +3,10 @@
     "id": "LPZ-CC-01",
     "nombre": "Centro Comunitario Alto Lima",
     "tipo": "Centro Comunitario",
+    "municipio": "La Paz",
     "macrodistrito": "Max Paredes",
+    "isp_tipico": "Entel",
+    "usa_pagos_qr": false,
     "activos_digitales": [
       "Router Wi-Fi TP-Link para telecentro vecinal",
       "PCs compartidas con carpetas SMB en red local"
@@ -14,13 +17,17 @@
     ],
     "presupuesto_disponible_usd": 20.0,
     "horas_tecnicas_disponibles": 4.0,
-    "contexto_operativo": "Telecentro comunitario con 12 equipos usados por jóvenes y vecinos."
+    "contexto_operativo": "Telecentro comunitario con 12 equipos usados por jóvenes y vecinos.",
+    "presupuesto_disponible_bob": 236.6
   },
   {
     "id": "LPZ-CC-02",
     "nombre": "Casa Cultural Comunitaria Villa Fátima",
     "tipo": "Centro Comunitario",
+    "municipio": "La Paz",
     "macrodistrito": "Periférica",
+    "isp_tipico": "Cotel",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Portal informativo en WordPress",
       "Router Wi-Fi abierto para talleres",
@@ -33,13 +40,17 @@
     ],
     "presupuesto_disponible_usd": 35.0,
     "horas_tecnicas_disponibles": 5.0,
-    "contexto_operativo": "Espacio cultural barrial administrado por voluntarios sin personal de TI fijo."
+    "contexto_operativo": "Espacio cultural barrial administrado por voluntarios; recibe aportes e inscripciones por QR.",
+    "presupuesto_disponible_bob": 414.05
   },
   {
     "id": "LPZ-CC-03",
     "nombre": "Centro de Capacitación Digital Cotahuma",
     "tipo": "Centro Comunitario",
+    "municipio": "La Paz",
     "macrodistrito": "Cotahuma",
+    "isp_tipico": "Entel",
+    "usa_pagos_qr": false,
     "activos_digitales": [
       "Laboratorio con acceso remoto RDP para soporte",
       "Carpetas compartidas SMB",
@@ -52,13 +63,40 @@
     ],
     "presupuesto_disponible_usd": 45.0,
     "horas_tecnicas_disponibles": 6.0,
-    "contexto_operativo": "Centro de alfabetización digital para adultos mayores y escolares."
+    "contexto_operativo": "Centro de alfabetización digital para adultos mayores y escolares.",
+    "presupuesto_disponible_bob": 532.35
+  },
+  {
+    "id": "LPZ-CC-04",
+    "nombre": "Telecentro Comunitario Municipal Viacha",
+    "tipo": "Centro Comunitario",
+    "municipio": "Viacha",
+    "macrodistrito": "Provincia Ingavi",
+    "isp_tipico": "Entel",
+    "usa_pagos_qr": false,
+    "activos_digitales": [
+      "Router MikroTik de acceso comunitario",
+      "PCs compartidas con carpetas SMB",
+      "Portal vecinal en WordPress"
+    ],
+    "tecnologias": [
+      "router_wifi",
+      "smb",
+      "wordpress"
+    ],
+    "presupuesto_disponible_usd": 25.0,
+    "horas_tecnicas_disponibles": 4.5,
+    "contexto_operativo": "Telecentro provincial del departamento de La Paz con conectividad limitada y soporte eventual.",
+    "presupuesto_disponible_bob": 295.75
   },
   {
     "id": "LPZ-UE-01",
     "nombre": "Unidad Educativa 6 de Junio - Turno Mañana",
     "tipo": "Unidad Educativa",
+    "municipio": "La Paz",
     "macrodistrito": "San Antonio",
+    "isp_tipico": "Entel",
+    "usa_pagos_qr": false,
     "activos_digitales": [
       "Plataforma escolar en WordPress",
       "Servidor web Apache en aula de computación",
@@ -71,13 +109,17 @@
     ],
     "presupuesto_disponible_usd": 50.0,
     "horas_tecnicas_disponibles": 6.0,
-    "contexto_operativo": "Colegio fiscal con laboratorio de informática y registro de notas local."
+    "contexto_operativo": "Colegio fiscal con laboratorio de informática y registro de notas local.",
+    "presupuesto_disponible_bob": 591.5
   },
   {
     "id": "LPZ-UE-02",
     "nombre": "Unidad Educativa Técnico Humanístico Sopocachi",
     "tipo": "Unidad Educativa",
+    "municipio": "La Paz",
     "macrodistrito": "Cotahuma",
+    "isp_tipico": "Tigo",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Servidor de archivos SMB para material didáctico",
       "Acceso RDP para administración de aula",
@@ -90,13 +132,17 @@
     ],
     "presupuesto_disponible_usd": 75.0,
     "horas_tecnicas_disponibles": 8.0,
-    "contexto_operativo": "Institución educativa con 25 computadoras en red y soporte técnico eventual."
+    "contexto_operativo": "Institución educativa con 25 computadoras en red y soporte técnico eventual.",
+    "presupuesto_disponible_bob": 887.25
   },
   {
     "id": "LPZ-UE-03",
     "nombre": "Unidad Educativa Valle de Mallasa",
     "tipo": "Unidad Educativa",
+    "municipio": "La Paz",
     "macrodistrito": "Mallasa",
+    "isp_tipico": "Entel",
+    "usa_pagos_qr": false,
     "activos_digitales": [
       "Router Wi-Fi de cobertura escolar",
       "Sitio web institucional en WordPress"
@@ -107,13 +153,17 @@
     ],
     "presupuesto_disponible_usd": 0.0,
     "horas_tecnicas_disponibles": 3.5,
-    "contexto_operativo": "Escuela periurbana con presupuesto cero para licencias; depende de ajustes gratuitos."
+    "contexto_operativo": "Escuela periurbana con presupuesto cero para licencias; depende de ajustes gratuitos.",
+    "presupuesto_disponible_bob": 0.0
   },
   {
     "id": "LPZ-UE-04",
     "nombre": "Instituto Tecnológico Comunal El Tejar",
     "tipo": "Unidad Educativa",
+    "municipio": "La Paz",
     "macrodistrito": "Max Paredes",
+    "isp_tipico": "AXS",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Servidor web Apache para prácticas",
       "Acceso RDP a máquinas virtuales",
@@ -128,13 +178,17 @@
     ],
     "presupuesto_disponible_usd": 90.0,
     "horas_tecnicas_disponibles": 10.0,
-    "contexto_operativo": "Centro de formación técnica con alta rotación de estudiantes en red."
+    "contexto_operativo": "Centro de formación técnica con alta rotación de estudiantes en red.",
+    "presupuesto_disponible_bob": 1064.7
   },
   {
     "id": "LPZ-MY-01",
     "nombre": "Textiles Artesanales Illimani SRL (MYPE)",
     "tipo": "MYPE",
+    "municipio": "La Paz",
     "macrodistrito": "Centro",
+    "isp_tipico": "Tigo",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Tienda catálogo en WordPress",
       "Router Wi-Fi de oficina y taller"
@@ -145,13 +199,17 @@
     ],
     "presupuesto_disponible_usd": 40.0,
     "horas_tecnicas_disponibles": 4.0,
-    "contexto_operativo": "Microempresa textil exportadora que gestiona pedidos por web y correo."
+    "contexto_operativo": "Microempresa textil exportadora que gestiona pedidos por web, WhatsApp y pagos QR.",
+    "presupuesto_disponible_bob": 473.2
   },
   {
     "id": "LPZ-MY-02",
     "nombre": "Imprenta y Diseño Gráfico Prado (MYPE)",
     "tipo": "MYPE",
+    "municipio": "La Paz",
     "macrodistrito": "Centro",
+    "isp_tipico": "AXS",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Servidor de archivos SMB con diseños de clientes",
       "Acceso RDP desde domicilio del diseñador",
@@ -164,13 +222,17 @@
     ],
     "presupuesto_disponible_usd": 65.0,
     "horas_tecnicas_disponibles": 5.5,
-    "contexto_operativo": "MYPE gráfica con riesgo alto de pérdida de archivos por ransomware."
+    "contexto_operativo": "MYPE gráfica con cobros por QR y riesgo alto de pérdida de archivos por ransomware.",
+    "presupuesto_disponible_bob": 768.95
   },
   {
     "id": "LPZ-MY-03",
     "nombre": "Café y Tostaduría Altura Sur (MYPE)",
     "tipo": "MYPE",
+    "municipio": "La Paz",
     "macrodistrito": "Sur",
+    "isp_tipico": "Tigo",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Router Wi-Fi para clientes y punto de venta",
       "Sitio WordPress con reservas",
@@ -183,13 +245,17 @@
     ],
     "presupuesto_disponible_usd": 55.0,
     "horas_tecnicas_disponibles": 5.0,
-    "contexto_operativo": "Negocio gastronómico con Wi-Fi compartido entre invitados y caja."
+    "contexto_operativo": "Negocio gastronómico con Wi-Fi compartido entre invitados, caja y cobros diarios por QR.",
+    "presupuesto_disponible_bob": 650.65
   },
   {
     "id": "LPZ-MY-04",
     "nombre": "Ferretería y Materiales Obrajes (MYPE)",
     "tipo": "MYPE",
+    "municipio": "La Paz",
     "macrodistrito": "Sur",
+    "isp_tipico": "Cotel",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "PC inventario con carpetas SMB",
       "Acceso RDP de contador externo"
@@ -200,13 +266,17 @@
     ],
     "presupuesto_disponible_usd": 30.0,
     "horas_tecnicas_disponibles": 3.5,
-    "contexto_operativo": "Pequeña ferretería con facturación e inventario en una PC de escritorio."
+    "contexto_operativo": "Pequeña ferretería con facturación, cobro por QR e inventario en una PC de escritorio.",
+    "presupuesto_disponible_bob": 354.9
   },
   {
     "id": "LPZ-MY-05",
     "nombre": "Consultora Agrícola y Turística Hampaturi (MYPE)",
     "tipo": "MYPE",
+    "municipio": "La Paz",
     "macrodistrito": "Hampaturi",
+    "isp_tipico": "Entel LTE",
+    "usa_pagos_qr": true,
     "activos_digitales": [
       "Portal WordPress de turismo comunitario",
       "Servidor web Apache",
@@ -219,6 +289,30 @@
     ],
     "presupuesto_disponible_usd": 80.0,
     "horas_tecnicas_disponibles": 7.0,
-    "contexto_operativo": "MYPE rural-urbana con conectividad intermitente y reservas en línea."
+    "contexto_operativo": "MYPE rural-urbana con conectividad intermitente, reservas en línea y cobros por QR.",
+    "presupuesto_disponible_bob": 946.4
+  },
+  {
+    "id": "LPZ-MY-06",
+    "nombre": "Taller Textil y Comercializadora 16 de Julio (MYPE)",
+    "tipo": "MYPE",
+    "municipio": "El Alto",
+    "macrodistrito": "Distrito 6",
+    "isp_tipico": "Entel",
+    "usa_pagos_qr": true,
+    "activos_digitales": [
+      "Router Wi-Fi TP-Link de taller y ventas",
+      "PC de pedidos con carpetas compartidas SMB",
+      "Catálogo web en WordPress"
+    ],
+    "tecnologias": [
+      "router_wifi",
+      "smb",
+      "wordpress"
+    ],
+    "presupuesto_disponible_usd": 30.0,
+    "horas_tecnicas_disponibles": 4.0,
+    "contexto_operativo": "MYPE manufacturera y comercial en El Alto que opera ventas por redes sociales y pagos QR.",
+    "presupuesto_disponible_bob": 354.9
   }
 ]
