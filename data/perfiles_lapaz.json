@@ -1,0 +1,224 @@
+[
+  {
+    "id": "LPZ-CC-01",
+    "nombre": "Centro Comunitario Alto Lima",
+    "tipo": "Centro Comunitario",
+    "macrodistrito": "Max Paredes",
+    "activos_digitales": [
+      "Router Wi-Fi TP-Link para telecentro vecinal",
+      "PCs compartidas con carpetas SMB en red local"
+    ],
+    "tecnologias": [
+      "router_wifi",
+      "smb"
+    ],
+    "presupuesto_disponible_usd": 20.0,
+    "horas_tecnicas_disponibles": 4.0,
+    "contexto_operativo": "Telecentro comunitario con 12 equipos usados por jóvenes y vecinos."
+  },
+  {
+    "id": "LPZ-CC-02",
+    "nombre": "Casa Cultural Comunitaria Villa Fátima",
+    "tipo": "Centro Comunitario",
+    "macrodistrito": "Periférica",
+    "activos_digitales": [
+      "Portal informativo en WordPress",
+      "Router Wi-Fi abierto para talleres",
+      "Servidor web Apache de eventos"
+    ],
+    "tecnologias": [
+      "wordpress",
+      "router_wifi",
+      "servidor_web"
+    ],
+    "presupuesto_disponible_usd": 35.0,
+    "horas_tecnicas_disponibles": 5.0,
+    "contexto_operativo": "Espacio cultural barrial administrado por voluntarios sin personal de TI fijo."
+  },
+  {
+    "id": "LPZ-CC-03",
+    "nombre": "Centro de Capacitación Digital Cotahuma",
+    "tipo": "Centro Comunitario",
+    "macrodistrito": "Cotahuma",
+    "activos_digitales": [
+      "Laboratorio con acceso remoto RDP para soporte",
+      "Carpetas compartidas SMB",
+      "Router Wi-Fi institucional"
+    ],
+    "tecnologias": [
+      "rdp",
+      "smb",
+      "router_wifi"
+    ],
+    "presupuesto_disponible_usd": 45.0,
+    "horas_tecnicas_disponibles": 6.0,
+    "contexto_operativo": "Centro de alfabetización digital para adultos mayores y escolares."
+  },
+  {
+    "id": "LPZ-UE-01",
+    "nombre": "Unidad Educativa 6 de Junio - Turno Mañana",
+    "tipo": "Unidad Educativa",
+    "macrodistrito": "San Antonio",
+    "activos_digitales": [
+      "Plataforma escolar en WordPress",
+      "Servidor web Apache en aula de computación",
+      "Router Wi-Fi docente"
+    ],
+    "tecnologias": [
+      "wordpress",
+      "servidor_web",
+      "router_wifi"
+    ],
+    "presupuesto_disponible_usd": 50.0,
+    "horas_tecnicas_disponibles": 6.0,
+    "contexto_operativo": "Colegio fiscal con laboratorio de informática y registro de notas local."
+  },
+  {
+    "id": "LPZ-UE-02",
+    "nombre": "Unidad Educativa Técnico Humanístico Sopocachi",
+    "tipo": "Unidad Educativa",
+    "macrodistrito": "Cotahuma",
+    "activos_digitales": [
+      "Servidor de archivos SMB para material didáctico",
+      "Acceso RDP para administración de aula",
+      "Servidor web interno"
+    ],
+    "tecnologias": [
+      "smb",
+      "rdp",
+      "servidor_web"
+    ],
+    "presupuesto_disponible_usd": 75.0,
+    "horas_tecnicas_disponibles": 8.0,
+    "contexto_operativo": "Institución educativa con 25 computadoras en red y soporte técnico eventual."
+  },
+  {
+    "id": "LPZ-UE-03",
+    "nombre": "Unidad Educativa Valle de Mallasa",
+    "tipo": "Unidad Educativa",
+    "macrodistrito": "Mallasa",
+    "activos_digitales": [
+      "Router Wi-Fi de cobertura escolar",
+      "Sitio web institucional en WordPress"
+    ],
+    "tecnologias": [
+      "router_wifi",
+      "wordpress"
+    ],
+    "presupuesto_disponible_usd": 0.0,
+    "horas_tecnicas_disponibles": 3.5,
+    "contexto_operativo": "Escuela periurbana con presupuesto cero para licencias; depende de ajustes gratuitos."
+  },
+  {
+    "id": "LPZ-UE-04",
+    "nombre": "Instituto Tecnológico Comunal El Tejar",
+    "tipo": "Unidad Educativa",
+    "macrodistrito": "Max Paredes",
+    "activos_digitales": [
+      "Servidor web Apache para prácticas",
+      "Acceso RDP a máquinas virtuales",
+      "Carpetas SMB compartidas",
+      "Router Wi-Fi de campus"
+    ],
+    "tecnologias": [
+      "servidor_web",
+      "rdp",
+      "smb",
+      "router_wifi"
+    ],
+    "presupuesto_disponible_usd": 90.0,
+    "horas_tecnicas_disponibles": 10.0,
+    "contexto_operativo": "Centro de formación técnica con alta rotación de estudiantes en red."
+  },
+  {
+    "id": "LPZ-MY-01",
+    "nombre": "Textiles Artesanales Illimani SRL (MYPE)",
+    "tipo": "MYPE",
+    "macrodistrito": "Centro",
+    "activos_digitales": [
+      "Tienda catálogo en WordPress",
+      "Router Wi-Fi de oficina y taller"
+    ],
+    "tecnologias": [
+      "wordpress",
+      "router_wifi"
+    ],
+    "presupuesto_disponible_usd": 40.0,
+    "horas_tecnicas_disponibles": 4.0,
+    "contexto_operativo": "Microempresa textil exportadora que gestiona pedidos por web y correo."
+  },
+  {
+    "id": "LPZ-MY-02",
+    "nombre": "Imprenta y Diseño Gráfico Prado (MYPE)",
+    "tipo": "MYPE",
+    "macrodistrito": "Centro",
+    "activos_digitales": [
+      "Servidor de archivos SMB con diseños de clientes",
+      "Acceso RDP desde domicilio del diseñador",
+      "Router Wi-Fi comercial"
+    ],
+    "tecnologias": [
+      "smb",
+      "rdp",
+      "router_wifi"
+    ],
+    "presupuesto_disponible_usd": 65.0,
+    "horas_tecnicas_disponibles": 5.5,
+    "contexto_operativo": "MYPE gráfica con riesgo alto de pérdida de archivos por ransomware."
+  },
+  {
+    "id": "LPZ-MY-03",
+    "nombre": "Café y Tostaduría Altura Sur (MYPE)",
+    "tipo": "MYPE",
+    "macrodistrito": "Sur",
+    "activos_digitales": [
+      "Router Wi-Fi para clientes y punto de venta",
+      "Sitio WordPress con reservas",
+      "Servidor web de menú digital"
+    ],
+    "tecnologias": [
+      "router_wifi",
+      "wordpress",
+      "servidor_web"
+    ],
+    "presupuesto_disponible_usd": 55.0,
+    "horas_tecnicas_disponibles": 5.0,
+    "contexto_operativo": "Negocio gastronómico con Wi-Fi compartido entre invitados y caja."
+  },
+  {
+    "id": "LPZ-MY-04",
+    "nombre": "Ferretería y Materiales Obrajes (MYPE)",
+    "tipo": "MYPE",
+    "macrodistrito": "Sur",
+    "activos_digitales": [
+      "PC inventario con carpetas SMB",
+      "Acceso RDP de contador externo"
+    ],
+    "tecnologias": [
+      "smb",
+      "rdp"
+    ],
+    "presupuesto_disponible_usd": 30.0,
+    "horas_tecnicas_disponibles": 3.5,
+    "contexto_operativo": "Pequeña ferretería con facturación e inventario en una PC de escritorio."
+  },
+  {
+    "id": "LPZ-MY-05",
+    "nombre": "Consultora Agrícola y Turística Hampaturi (MYPE)",
+    "tipo": "MYPE",
+    "macrodistrito": "Hampaturi",
+    "activos_digitales": [
+      "Portal WordPress de turismo comunitario",
+      "Servidor web Apache",
+      "Router Wi-Fi satelital/LTE"
+    ],
+    "tecnologias": [
+      "wordpress",
+      "servidor_web",
+      "router_wifi"
+    ],
+    "presupuesto_disponible_usd": 80.0,
+    "horas_tecnicas_disponibles": 7.0,
+    "contexto_operativo": "MYPE rural-urbana con conectividad intermitente y reservas en línea."
+  }
+]

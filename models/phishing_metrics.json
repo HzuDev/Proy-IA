@@ -1,0 +1,40 @@
+{
+  "precision": 0.9971,
+  "recall": 0.9927,
+  "f1_score": 0.9949,
+  "roc_auc": 0.9968,
+  "confusion_matrix": [
+    [
+      4565,
+      10
+    ],
+    [
+      25,
+      3400
+    ]
+  ],
+  "train_samples": 32000,
+  "test_samples": 8000,
+  "feature_columns": [
+    "url_length",
+    "domain_length",
+    "is_https",
+    "is_ip",
+    "tld_length",
+    "num_subdomains",
+    "num_dots_host",
+    "num_slashes_path",
+    "num_hyphens",
+    "num_at",
+    "num_qmark",
+    "num_equals",
+    "num_ampersand",
+    "num_letters",
+    "letter_ratio",
+    "num_digits",
+    "digit_ratio",
+    "special_ratio",
+    "has_obfuscation",
+    "suspicious_kw_count"
+  ]
+}

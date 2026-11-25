@@ -1,0 +1,26 @@
+# Entorno y secretos
+.env
+.venv/
+venv/
+
+# Cachés de Python y pruebas
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Modelos entrenados (regenerar con src/train_ml.py y src/train_phishing.py)
+models/*.joblib
+
+# Datasets pesados y archivos comprimidos (ver README.md para descargar/regenerar)
+data/*.zip
+data/PhiUSIIL_Phishing_URL_Dataset.csv
+data/UNSW_NB15_*.csv
+data/urlhaus_recent.csv
+datasets/UNSW_NB15_*.csv
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

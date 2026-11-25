@@ -1,0 +1,54 @@
+{
+  "precision": 0.9892,
+  "recall": 0.8674,
+  "f1_score": 0.9243,
+  "roc_auc": 0.9864,
+  "confusion_matrix": [
+    [
+      54869,
+      1131
+    ],
+    [
+      15820,
+      103521
+    ]
+  ],
+  "train_samples": 30000,
+  "test_samples": 175341,
+  "feature_columns": [
+    "dur",
+    "spkts",
+    "dpkts",
+    "sbytes",
+    "dbytes",
+    "rate",
+    "sttl",
+    "dttl",
+    "sload",
+    "dload",
+    "sloss",
+    "dloss",
+    "sinpkt",
+    "dinpkt",
+    "sjit",
+    "djit",
+    "swin",
+    "dwin",
+    "tcprtt",
+    "synack",
+    "ackdat",
+    "smean",
+    "dmean",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "ct_dst_ltm",
+    "ct_src_dport_ltm",
+    "ct_dst_sport_ltm",
+    "ct_dst_src_ltm",
+    "ct_src_ltm",
+    "ct_srv_dst",
+    "proto",
+    "service",
+    "state"
+  ]
+}

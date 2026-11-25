@@ -1,0 +1,282 @@
+[
+  {
+    "cve_id": "CVE-2002-1312",
+    "descripcion": "Buffer overflow in the Web management interface in Linksys BEFW11S4 wireless access point router 2 and BEFSR11, BEFSR41, and BEFSRU31 EtherFast Cable/DSL routers with firmware before 1.43.3 with remote management enabled allows remote attackers to cause a denial of service (router crash) via a long password.",
+    "tecnologia": "router_wifi",
+    "cvss": 5.0,
+    "epss": 0.01967,
+    "costo_remediacion_usd": 0.0,
+    "horas_remediacion": 1.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2002-1865",
+    "descripcion": "Buffer overflow in the Embedded HTTP server, as used in (1) D-Link DI-804 4.68, Dl-704 V2.56b6, and Dl-704 V2.56b5 and (2) Linksys Etherfast BEFW11S4 Wireless AP + Cable/DSL Router 1.37.2 through 1.42.7 and Linksys WAP11 1.3 and 1.4, allows remote attackers to cause a denial of service (crash) via a long header, as demonstrated using the Host header.",
+    "tecnologia": "router_wifi",
+    "cvss": 5.0,
+    "epss": 0.02906,
+    "costo_remediacion_usd": 0.0,
+    "horas_remediacion": 1.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2003-0419",
+    "descripcion": "SMC Networks Barricade Wireless Cable/DSL Broadband Router SMC7004VWBR allows remote attackers to cause a denial of service via certain packets to PPTP port 1723 on the internal interface.",
+    "tecnologia": "router_wifi",
+    "cvss": 5.0,
+    "epss": 0.01354,
+    "costo_remediacion_usd": 0.0,
+    "horas_remediacion": 1.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2004-1596",
+    "descripcion": "The 3COM Wireless router 3CRADSL72 running Boot Code 1.3d allows remote attackers to gain sensitive information such as passwords and router settings via a direct HTTP request to app_sta.stm.",
+    "tecnologia": "router_wifi",
+    "cvss": 7.5,
+    "epss": 0.02611,
+    "costo_remediacion_usd": 5.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2004-0328",
+    "descripcion": "Gigabyte Gn-B46B 2.4Ghz wireless broadband router firmware 1.003.00 allows local users on the same local network as the router to bypass authentication by using a copy of the router's html menu on a separate system.",
+    "tecnologia": "router_wifi",
+    "cvss": 7.2,
+    "epss": 0.00358,
+    "costo_remediacion_usd": 5.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2004-0610",
+    "descripcion": "The Web administration interface in Microsoft MN-500 Wireless Router allows remote attackers to cause a denial of service (connection refusal) via a large number of open HTTP connections.",
+    "tecnologia": "router_wifi",
+    "cvss": 5.0,
+    "epss": 0.14818,
+    "costo_remediacion_usd": 0.0,
+    "horas_remediacion": 1.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2006-4208",
+    "descripcion": "Directory traversal vulnerability in wp-db-backup.php in Skippy WP-DB-Backup plugin for WordPress 1.7 and earlier allows remote authenticated users with administrative privileges to read arbitrary files via a .. (dot dot) in the backup parameter to edit.php.",
+    "tecnologia": "wordpress",
+    "cvss": 5.0,
+    "epss": 0.12055,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2006-5705",
+    "descripcion": "Multiple directory traversal vulnerabilities in plugins/wp-db-backup.php in WordPress before 2.0.5 allow remote authenticated users to read or overwrite arbitrary files via directory traversal sequences in the (1) backup and (2) fragment parameters in a GET request.",
+    "tecnologia": "wordpress",
+    "cvss": 6.0,
+    "epss": 0.03577,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2006-6863",
+    "descripcion": "PHP remote file inclusion vulnerability in the Enigma2 plugin (Enigma2.php) in Enigma WordPress Bridge allows remote attackers to execute arbitrary PHP code via a URL in the boarddir parameter.  NOTE: CVE disputes this issue, since $boarddir is set to a fixed value",
+    "tecnologia": "wordpress",
+    "cvss": 9.8,
+    "epss": 0.13055,
+    "costo_remediacion_usd": 30.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2007-2426",
+    "descripcion": "PHP remote file inclusion vulnerability in myfunctions/mygallerybrowser.php in the myGallery 1.4b4 and earlier plugin for WordPress allows remote attackers to execute arbitrary PHP code via a URL in the myPath parameter.",
+    "tecnologia": "wordpress",
+    "cvss": 7.5,
+    "epss": 0.62871,
+    "costo_remediacion_usd": 20.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2007-2481",
+    "descripcion": "PHP remote file inclusion vulnerability in wordtube-button.php in the wordTube 1.43 and earlier plugin for WordPress, when register_globals is enabled, allows remote attackers to execute arbitrary PHP code via a URL in the wpPATH parameter.",
+    "tecnologia": "wordpress",
+    "cvss": 6.8,
+    "epss": 0.40099,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2007-2482",
+    "descripcion": "Directory traversal vulnerability in wordtube-button.php in the wordTube 1.43 and earlier plugin for WordPress, when register_globals is enabled, allows remote attackers to include and execute arbitrary local files via a .. (dot dot) in the wpPATH parameter.",
+    "tecnologia": "wordpress",
+    "cvss": 6.8,
+    "epss": 0.08595,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-1999-1412",
+    "descripcion": "A possible interaction between Apple MacOS X release 1.0 and Apache HTTP server allows remote attackers to cause a denial of service (crash) via a flood of HTTP GET requests to CGI programs, which generates a large number of processes.",
+    "tecnologia": "servidor_web",
+    "cvss": 5.0,
+    "epss": 0.35912,
+    "costo_remediacion_usd": 20.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2000-0505",
+    "descripcion": "The Apache 1.3.x HTTP server for Windows platforms allows remote attackers to list directory contents by requesting a URL containing a large number of / characters.",
+    "tecnologia": "servidor_web",
+    "cvss": 5.0,
+    "epss": 0.44369,
+    "costo_remediacion_usd": 20.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2000-1168",
+    "descripcion": "IBM HTTP Server 1.3.6 (based on Apache) allows remote attackers to cause a denial of service and possibly execute arbitrary commands via a long GET request.",
+    "tecnologia": "servidor_web",
+    "cvss": 7.5,
+    "epss": 0.01924,
+    "costo_remediacion_usd": 25.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2001-1556",
+    "descripcion": "The log files in Apache web server contain information directly supplied by clients and does not filter or quote control characters, which could allow remote attackers to hide HTTP requests and spoof source IP addresses when logs are viewed with UNIX programs such as cat, tail, and grep.",
+    "tecnologia": "servidor_web",
+    "cvss": 5.0,
+    "epss": 0.03564,
+    "costo_remediacion_usd": 20.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2002-0240",
+    "descripcion": "PHP, when installed with Apache and configured to search for index.php as a default web page, allows remote attackers to obtain the full pathname of the server via the HTTP OPTIONS method, which reveals the pathname in the resulting error message.",
+    "tecnologia": "servidor_web",
+    "cvss": 5.0,
+    "epss": 0.07422,
+    "costo_remediacion_usd": 20.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2002-1157",
+    "descripcion": "Cross-site scripting vulnerability in the mod_ssl Apache module 2.8.9 and earlier, when UseCanonicalName is off and wildcard DNS is enabled, allows remote attackers to execute script as other web site visitors, via the server name in an HTTPS response on the SSL port, which is used in a self-referencing URL, a different vulnerability than CAN-2002-0840.",
+    "tecnologia": "servidor_web",
+    "cvss": 7.5,
+    "epss": 0.11124,
+    "costo_remediacion_usd": 25.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2002-1256",
+    "descripcion": "The SMB signing capability in the Server Message Block (SMB) protocol in Microsoft Windows 2000 and Windows XP allows attackers to disable the digital signing settings in an SMB session to force the data to be sent unsigned, then inject data into the session without detection, e.g. by modifying group policy information sent from a domain controller.",
+    "tecnologia": "smb",
+    "cvss": 5.0,
+    "epss": 0.05413,
+    "costo_remediacion_usd": 0.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2005-1206",
+    "descripcion": "Buffer overflow in the Server Message Block (SMB) functionality for Microsoft Windows 2000, XP SP1 and SP2, and Server 2003 and SP1 allows remote attackers to execute arbitrary code via unknown vectors, aka the \"Server Message Block Vulnerability.\"",
+    "tecnologia": "smb",
+    "cvss": 7.5,
+    "epss": 0.59399,
+    "costo_remediacion_usd": 5.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2006-2373",
+    "descripcion": "The Server Message Block (SMB) driver (MRXSMB.SYS) in Microsoft Windows 2000 SP4, XP SP1 and SP2, and Server 2003 SP1 and earlier allows local users to execute arbitrary code by calling the MrxSmbCscIoctlOpenForCopyChunk function with the METHOD_NEITHER method flag and an arbitrary address, possibly for kernel memory, aka the \"SMB Driver Elevation of Privilege Vulnerability.\"",
+    "tecnologia": "smb",
+    "cvss": 10.0,
+    "epss": 0.29172,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2006-2374",
+    "descripcion": "The Server Message Block (SMB) driver (MRXSMB.SYS) in Microsoft Windows 2000 SP4, XP SP1 and SP2, and Server 2003 SP1 and earlier allows local users to cause a denial of service (hang) by calling the MrxSmbCscIoctlCloseForCopyChunk with the file handle of the shadow device, which results in a deadlock, aka the \"SMB Invalid Handle Vulnerability.\"",
+    "tecnologia": "smb",
+    "cvss": 5.5,
+    "epss": 0.01748,
+    "costo_remediacion_usd": 0.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2007-5351",
+    "descripcion": "Unspecified vulnerability in Server Message Block Version 2 (SMBv2) signing support in Microsoft Windows Vista allows remote attackers to force signature re-computation and execute arbitrary code via a crafted SMBv2 packet, aka \"SMBv2 Signing Vulnerability.\"",
+    "tecnologia": "smb",
+    "cvss": 10.0,
+    "epss": 0.41243,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2009-1133",
+    "descripcion": "Heap-based buffer overflow in Microsoft Remote Desktop Connection (formerly Terminal Services Client) running RDP 5.0 through 6.1 on Windows, and Remote Desktop Connection Client for Mac 2.0, allows remote attackers to execute arbitrary code via unspecified parameters, aka \"Remote Desktop Connection Heap Overflow Vulnerability.\"",
+    "tecnologia": "rdp",
+    "cvss": 9.3,
+    "epss": 0.30496,
+    "costo_remediacion_usd": 25.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2009-1929",
+    "descripcion": "Heap-based buffer overflow in the Microsoft Terminal Services Client ActiveX control running RDP 6.1 on Windows XP SP2, Vista SP1 or SP2, or Server 2008 Gold or SP2; or 5.2 or 6.1 on Windows XP SP3; allows remote attackers to execute arbitrary code via unspecified parameters to unknown methods, aka \"Remote Desktop Connection ActiveX Control Heap Overflow Vulnerability.\"",
+    "tecnologia": "rdp",
+    "cvss": 9.3,
+    "epss": 0.34534,
+    "costo_remediacion_usd": 25.0,
+    "horas_remediacion": 2.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2014-2544",
+    "descripcion": "Unspecified vulnerability in Spotfire Web Player Engine, Spotfire Desktop, and Spotfire Server Authentication Module in TIBCO Spotfire Server 3.3.x before 3.3.4, 4.5.x before 4.5.1, 5.0.x before 5.0.2, 5.5.x before 5.5.1, and 6.x before 6.0.2; Spotfire Professional 4.0.x before 4.0.4, 4.5.x before 4.5.2, 5.0.x before 5.0.2, 5.5.x before 5.5.1, and 6.x before 6.0.1; Spotfire Web Player 4.0.x before",
+    "tecnologia": "rdp",
+    "cvss": 7.5,
+    "epss": 0.03123,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2014-2510",
+    "descripcion": "The JAXB XML parser in EMC Documentum Foundation Services (DFS) 6.6 before P39, 6.7 SP1 before P28, and 6.7 SP2 before P15, as used in My Documentum for Desktop, My Documentum for Microsoft Outlook, and CenterStage, allows remote authenticated users to read arbitrary files via an external entity declaration in conjunction with an entity reference, related to an XML External Entity (XXE) issue.",
+    "tecnologia": "rdp",
+    "cvss": 6.8,
+    "epss": 0.02092,
+    "costo_remediacion_usd": 10.0,
+    "horas_remediacion": 1.5,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  },
+  {
+    "cve_id": "CVE-2015-4554",
+    "descripcion": "Multiple unspecified vulnerabilities in TIBCO Spotfire Client and Spotfire Web Player Client in Spotfire Analyst before 5.5.2, 6.0.x before 6.0.3, 6.5.x before 6.5.3, and 7.0.x before 7.0.1; Spotfire Analytics Platform for AWS 6.5 and 7.0.x before 7.0.1; Spotfire Automation Services before 5.5.2, 6.0.x before 6.0.3, 6.5.x before 6.5.3, and 7.0.x before 7.0.1; Spotfire Deployment Kit before 5.5.2, ",
+    "tecnologia": "rdp",
+    "cvss": 7.5,
+    "epss": 0.03468,
+    "costo_remediacion_usd": 15.0,
+    "horas_remediacion": 2.0,
+    "fuente": "NIST NVD v2.0 + FIRST EPSS"
+  }
+]
