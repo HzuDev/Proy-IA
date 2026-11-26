@@ -42,12 +42,29 @@ Proy-IA/
 │   ├── ml_metrics.json                    # Métricas del modelo de tráfico de red (UNSW-NB15)
 │   └── phishing_metrics.json              # Métricas del modelo de phishing en URLs (PhiUSIIL)
 ├── src/
-│   ├── llm_provider.py                    # Adaptador universal multi-proveedor LLM
-│   ├── agent.py                           # Orquestador Multi-Agente (Planificador + Tools + Redactor + Verificador)
+│   ├── llm/                               # Adaptador universal multi-proveedor LLM
+│   │   ├── catalog.py                     # Catálogo de proveedores, modelos sugeridos y LLMConfig
+│   │   ├── resolver.py                    # Detección automática e inferencia de credenciales (.env / runtime)
+│   │   └── clients.py                     # Clientes nativos Gemini, Anthropic y OpenAI-compatible
+│   ├── orchestrator/                      # Orquestación Multi-Agente (Plan-and-Execute + Verificación)
+│   │   ├── planner.py                     # Agente Planificador y carga de perfiles (perfiles_lapaz.json)
+│   │   ├── executor.py                    # Ejecutor determinista de tools y compactación de evidencia
+│   │   ├── writer.py                      # Agente Redactor Técnico y respaldo determinista
+│   │   └── pipeline.py                    # Flujo principal ejecutar_diagnostico() con Guardrails
+│   ├── tools/                             # Herramientas puras de IA y contexto regional
+│   │   ├── bolivia_context.py             # INE-MYPES La Paz, canales CGII/AGETIC/ATT/ASFI y TCO BCB en vivo
+│   │   ├── ml_network.py                  # Clasificador de tráfico de red (Random Forest / UNSW-NB15)
+│   │   ├── ml_phishing.py                 # Detector de phishing/quishing (PhiUSIIL + URLhaus + Bolivia)
+│   │   ├── vuln_intel.py                  # Consulta verificada de CVEs (NVD, EPSS, CISA KEV, AGETIC)
+│   │   └── genetic_optimizer.py           # Algoritmo Genético binario con reparación bajo presupuesto/horas
+│   ├── data_builders/                     # Constructores reproducibles de datos
+│   │   ├── cve_builder.py                 # Descarga y caché de CVEs desde NIST NVD v2.0 + FIRST EPSS
+│   │   └── profiles_data.py               # Generación de los 14 perfiles operativos de La Paz
+│   ├── agent.py                           # Fachada del orquestador (re-exporta ejecutar_diagnostico)
+│   ├── llm_provider.py                    # Fachada del adaptador LLM (re-exporta resolve_llm_config / chat_completion)
+│   ├── build_data.py                      # CLI para regenerar cve_cache.json y perfiles_lapaz.json
 │   ├── api.py                             # API REST FastAPI (/health, /tipo-cambio, /proveedores-llm, /diagnosticar)
-│   ├── build_data.py                      # Generación de cve_cache.json y perfiles_lapaz.json
 │   ├── guardrails.py                      # Guardrails deterministas de entrada y salida
-│   ├── tools.py                           # ML red, ML phishing/URLhaus/quishing, CVEs, TCO BCB y Algoritmo Genético
 │   ├── train_ml.py                        # Entrenamiento del clasificador de tráfico (UNSW-NB15)
 │   ├── train_phishing.py                  # Entrenamiento del clasificador de phishing (PhiUSIIL)
 │   ├── test_deepseek.py                   # Verificación rápida por CLI de cualquier proveedor LLM configurado
@@ -60,6 +77,46 @@ Proy-IA/
     ├── test_llm_provider.py               # Tests unitarios del adaptador multi-proveedor LLM
     └── test_tools.py                      # Tests unitarios de AG, Phishing/Quishing Bolivia y API BCB
 ```
+
+---
+
+## 🧠 Cómo Funciona el Codebase (Guía Técnica)
+
+El sistema separa estrictamente la **coordinación lingüística** (LLM) del **cálculo numérico y clasificación** (Machine Learning, Algoritmo Genético y reglas deterministas), garantizando que ninguna cifra o CVE sea inventada.
+
+### 1. Flujo de Ejecución (`ejecutar_diagnostico`)
+
+```mermaid
+flowchart LR
+    U["Usuario (app.py / src/api.py)"] --> G1["1. Input Guardrail<br/>(src/guardrails.py)"]
+    G1 -->|Bloqueado| R0["Rechazo seguro<br/>(ofensivo / fuera de alcance)"]
+    G1 -->|Permitido| P["2. Agente Planificador<br/>(src/orchestrator/planner.py)"]
+    P --> E["3. Ejecutor de Tools<br/>(src/orchestrator/executor.py)"]
+    E --> T["src/tools/*<br/>ML Red · Phishing · NVD/KEV · AG · BCB"]
+    T --> W["4. Agente Redactor<br/>(src/orchestrator/writer.py)"]
+    W --> G2["5. Output Guardrail<br/>(src/guardrails.py)"]
+    G2 -->|Aprobado| OK["Diagnóstico Verificado"]
+    G2 -->|Falla 1er intento| W
+    G2 -->|Falla 2do intento| FB["Respaldo Determinista<br/>(_fallback_determinista)"]
+```
+
+Paso a paso dentro de [`src/orchestrator/pipeline.py`](src/orchestrator/pipeline.py):
+1. **Guardrail de Entrada (`validar_entrada` en `src/guardrails.py`):** Inspecciona la consulta antes de llamar a cualquier LLM. Bloquea solicitudes ofensivas (exploits, fuerza bruta, DDoS) o ajenas a ciberseguridad, y detecta si el usuario pide estadísticas barriales de La Paz para activar la regla de transparencia.
+2. **Resolución de LLM (`resolve_llm_config` en `src/llm/resolver.py`):** Detecta automáticamente el proveedor configurado en `.env` o en la petición (`DeepSeek`, `OpenAI`, `Gemini`, `Anthropic`, `OpenCode`, `OpenRouter`, `Groq`, `Ollama` o endpoint custom) sin acoplar la lógica del agente a una sola API.
+3. **Agente Planificador (`_agente_planificador` en `src/orchestrator/planner.py`):** Combina la consulta con el perfil seleccionado de `data/perfiles_lapaz.json`, extrae presupuestos expresados en Bolivianos (`Bs`) convirtiéndolos a `USD` con el TCO BCB vigente, y genera un plan JSON con las tecnologías y herramientas a ejecutar.
+4. **Ejecutor de Tools (`_ejecutor_tools` en `src/orchestrator/executor.py`):** Invoca de forma determinista las herramientas de `src/tools/`:
+   - `ml_network.py`: Clasifica flujos de red (`ataque` / `normal`) usando el `RandomForestClassifier` entrenado sobre `UNSW-NB15`.
+   - `ml_phishing.py`: Evalúa URLs combinando `URLhaus`, el modelo `RandomForestClassifier` entrenado sobre `PhiUSIIL` y reglas heurísticas de suplantación a entidades bolivianas (`ASFI`, `Banco Unión`, `BCB`, `AGETIC`, `Impuestos`, `Entel`, `Tigo`, pagos `QR`).
+   - `vuln_intel.py`: Consulta `data/cve_cache.json` cruzando con `CISA KEV` (`known_exploited_vulnerabilities.csv`) y alertas de `AGETIC CSIRT`, ponderando cada riesgo por `CVSS × EPSS × bonos`.
+   - `genetic_optimizer.py`: Ejecuta un **Algoritmo Genético binario** (población=60, generaciones=80, torneo, cruce, mutación adaptativa y reparación factible `_repair_chromosome`) para elegir el subconjunto de parches que maximiza la reducción de riesgo sin superar el presupuesto (`USD`/`Bs`) ni las horas técnicas disponibles.
+   - `bolivia_context.py`: Adjunta canales oficiales de reporte (`CGII/AGETIC`, `ATT`, `ASFI`), el TCO oficial del BCB en vivo y estadísticas departamentales de `INE-MYPES_DEPTO.xls`.
+5. **Agente Redactor y Guardrail de Salida (`src/orchestrator/writer.py` + `validar_salida`):** Resume el registro de herramientas (`_compactar_registro_para_llm`) y redacta el informe técnico. Luego `validar_salida` verifica literalmente que todo `CVE-XXXX-XXXX` y cifra citada exista en la salida de las tools; si detecta una alucinación, reintenta 1 vez con feedback y, si persiste, entrega `_fallback_determinista` (100% libre de alucinaciones).
+
+### 2. Puntos de Entrada del Proyecto
+- **Interfaz Web (`app.py`):** Aplicación Streamlit para pruebas interactivas, selección de los 14 perfiles de La Paz, ajuste de TCO BCB y cambio en caliente de proveedor/modelo LLM.
+- **API REST (`src/api.py`):** Servicio FastAPI que expone `ejecutar_diagnostico` vía HTTP (`/diagnosticar`, `/tipo-cambio`, `/proveedores-llm`, `/health`).
+- **Construcción y Entrenamiento (`src/build_data.py`, `src/train_ml.py`, `src/train_phishing.py`):** Scripts reproducibles para regenerar `cve_cache.json`, `perfiles_lapaz.json` y los pipelines `.joblib`.
+- **Evaluación (`evals/run_evals.py` y `pytest`):** Verifica unitariamente guardrails, adaptadores LLM, Algoritmo Genético, API BCB y corre los 15 escenarios end-to-end.
 
 ---
 
@@ -145,14 +202,14 @@ Por tamaño, los **datasets crudos** y los **modelos `.joblib` entrenados** se e
 ### Cómo entrenar los modelos `.joblib` localmente
 
 1. **Detección de intrusiones (`models/modelo_red_unsw.joblib`)**:
-   - Coloca `UNSW_NB15_training-set.csv` y `UNSW_NB15_testing-set.csv` en `data/`.
+   - Descarga `UNSW_NB15_training-set.csv` y `UNSW_NB15_testing-set.csv` desde la [página oficial de UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset) (o desde su [carpeta oficial en CloudStor](https://cloudstor.aarnet.edu.au/plus/index.php/s/2DhnLGDdEECo4ys?path=%2FUNSW-NB15%20-%20CSV%20Files%2Fa%20part%20of%20training%20and%20testing%20set)) y colócalos en `data/`.
    - Ejecuta:
      ```bash
      python -m src.train_ml
      ```
 
 2. **Detección de phishing en URLs (`models/modelo_phishing_url.joblib`)**:
-   - Coloca `PhiUSIIL_Phishing_URL_Dataset.csv` en `data/`.
+   - Descarga el dataset desde [UCI Machine Learning Repository — PhiUSIIL Phishing URL](https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset), descomprímelo y coloca `PhiUSIIL_Phishing_URL_Dataset.csv` en `data/`.
    - Ejecuta:
      ```bash
      python -m src.train_phishing
